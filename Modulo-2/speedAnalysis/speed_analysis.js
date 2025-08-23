@@ -39,12 +39,17 @@ function endTest() {
 
     if (timeElapsed !== 0 && !isNaN(typedWords)) {
         wpm = Math.round((typedWords / timeElapsed) * 60);
+
+        // Calcular total length
+        var totalLength = userTypedText.length;
+
     }
 
     // Mostrar los resultados
     var outputDiv = document.getElementById("output");
     outputDiv.innerHTML = "<h2>Resultados de la Prueba de Escritura:</h2>" +
-        "<p>Palabras Escribidas: " + typedWords + "</p>" +
+        "<p>Longitud Total: " + totalLength + "</p>" +
+        "<p>Palabras Escritas: " + typedWords + "</p>" +
         "<p>Tiempo Transcurrido: " + timeElapsed.toFixed(2) + " segundos</p>" +
         "<p>Palabras Por Minuto (WPM): " + wpm + "</p>";
 }
